@@ -39,7 +39,7 @@ int partition_r(int arr[], int low, int high)
 
 void QuickSort(int arr[], int s, int e) { //start index, end index 
 	if(s<e) {
-		int p = Partition(arr, s, e);
+		int p = partition_r(arr, s, e);
 		QuickSort(arr, s, p-1); //recursive QS call for left sort
 		QuickSort(arr, p+1, e); //recursive QS call for right sort
 	}
