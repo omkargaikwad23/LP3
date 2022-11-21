@@ -1,4 +1,5 @@
 #include <iostream>
+#include <time.h>
 using namespace std;
 
 /*
@@ -24,6 +25,16 @@ int Partition(int arr[],int s,int e) {
 	}
     swap(arr[e], arr[pIndex]);
 	return pIndex;
+}
+
+int partition_r(int arr[], int low, int high)
+{
+    // Generate a random number in between low .. high
+    srand(time(NULL));
+    int random = low + rand() % (high - low);
+    // Swap A[random] with A[high]
+    swap(arr[random], arr[high]);
+    return Partition(arr, low, high);
 }
 
 void QuickSort(int arr[], int s, int e) { //start index, end index 
